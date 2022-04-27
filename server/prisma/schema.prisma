@@ -28,3 +28,11 @@ model Project {
   user      User     @relation(fields: [userId], references: [id])
   userId    String
 }
+
+model Task {
+  createdAt DateTime @default(now())
+  dodogo    String?
+  id        String   @id @default(cuid())
+  momo      String?
+  updatedAt DateTime @updatedAt
+}
